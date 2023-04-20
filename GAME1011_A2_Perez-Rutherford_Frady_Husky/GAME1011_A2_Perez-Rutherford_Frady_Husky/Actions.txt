@@ -1,0 +1,9 @@
+Go Left
+Go Right
+Go Straight
+Fight Winton
+Spare Winton
+Fight Grand Wizard
+Spare Grand Wizard
+Fight Carl
+Spare Carl

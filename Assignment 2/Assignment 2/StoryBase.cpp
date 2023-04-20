@@ -13,7 +13,7 @@ std::vector<std::string> StoryStart::m_inputActions;
 std::vector<std::string> StoryStart::m_currentActions;
 int StoryStart::currentGameStepThrough = 0;
 
-void StoryStart::startStory()
+int StoryStart::startStory()
 {
 	//Class Object
 	PlayerDecision karmaCount;
@@ -28,16 +28,16 @@ void StoryStart::startStory()
 	bool gameOver = false;
 
 	//Text File
-	ifstream storyFile;
+	fstream storyFile;
 
 	//Open the file
 	storyFile.open("Story.txt");
 
 	//File open VALIDATION
-	if (!storyFile.is_open())
+	if (storyFile.fail())
 	{
 		cout << "ERROR OPENING Story.txt!" << endl;
-		//exit(0);
+		return 1;
 	}
 
 	else

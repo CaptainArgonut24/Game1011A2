@@ -8,12 +8,7 @@ using namespace std;
 
 int main()
 {
-
-	
 	StoryStart beginStory;
-
-
-	
 
 	cout << "---------------------------------------------" << endl;
 	cout << "GAME1017 - Advanced Programming Assignment 2" << endl;
@@ -27,17 +22,9 @@ int main()
 	cout << "----------Hit The Enter Key To Start]-------------" << endl;
 	getchar();
 
-
-
 	//Start game
 	system("Pause");
 	system("CLS");
 	beginStory.startStory();
-
-
-
-
-
-
 
 }
