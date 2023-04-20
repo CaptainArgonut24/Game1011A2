@@ -17,7 +17,7 @@ void StoryOutcome::Bad()
 
 	Facts();
 
-	endingFile << "-------------BAD ENDING----------------" << endl;
+	endingFile << "-------------[BAD ENDING]----------------" << endl;
 	endingFile << "Your memories return and you remember the events that happened that led to where you are." << endl;
 	endingFile << "Unable to cope with your past and the events that happened there," << endl;
 	endingFile << "You feel completely empty and run away. Your fate was unknown" << endl;
