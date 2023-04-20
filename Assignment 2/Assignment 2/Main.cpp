@@ -4,10 +4,6 @@
 #include <string>
 
 #include "StoryBase.h"
-
-
-
-
 using namespace std;
 
 int main()

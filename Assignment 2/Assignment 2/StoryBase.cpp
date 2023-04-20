@@ -6,6 +6,10 @@
 #include "SOUT.h"
 
 using namespace std;
+std::vector<std::string> StoryStart::m_dialogueTxt;
+std::vector<std::string> StoryStart::m_inputActions;
+std::vector<std::string> StoryStart::m_currentActions;
+int StoryStart::currentGameStepThrough = 0;
 
 void StoryStart::startStory()
 {
@@ -19,6 +23,7 @@ void StoryStart::startStory()
 	int playerChoice = 0;
 	string line;
 	string command;
+	bool gameOver = false;
 
 	//Text File
 	ifstream storyFile;
@@ -40,7 +45,7 @@ void StoryStart::startStory()
 
 
 	//Story 
-	for (int i = 1; i <= 4; i++)
+	for (int i = 1; i <= 10; i++)
 	{
 		getline(storyFile, line);
 		//First Scenario
@@ -50,35 +55,33 @@ void StoryStart::startStory()
 			cout << line << endl;
 			cout << "-------------------------------------------" << endl;
 			cout << "(Type one of the following)" << endl;
-			cout << "Help Him" << endl;
-			cout << "Leave Him" << endl;
+			cout << "Go in" << endl;
+			cout << "Leave " << endl;
 			cout << "-------------------------------------------" << endl;
 			getline(cin, command);
 			system("CLS");
 
 			//IF statements for the choices
-			if (command == "Help Him")
+			if (command == "Go in"&&i==2)
 			{
 				cout << "------------------------------------------------------------" << endl;
-				cout << "The man thanks you for your help and walks away" << endl;
+				cout << line << endl;
 				cout << "------------------------------------------------------------" << endl;
-				//karmaCounter++;
-				karmaCount.setKarmaCounter(karmaCounter++);
+				
 			}
 
-			else if (command == "Leave Him")
+			else if (command == "Leave"&& i==3)
 			{
 				cout << "------------------------------------------------------------" << endl;
-				cout << "You hear him screaming in pain from a distance" << endl;
+				cout << line << endl;
 				cout << "------------------------------------------------------------" << endl;
-				//karmaCounter--;
-				karmaCount.setKarmaCounter(karmaCounter--);
+				gameOver = true;
 			}
 
 		}
 
 		//Second Scenario
-		if (i == 2)
+		if (i == 5)
 		{
 			cout << "-----------------Scenario 2----------------" << endl;
 			cout << line << endl;
@@ -94,8 +97,7 @@ void StoryStart::startStory()
 				cout << "------------------------------------------------------------" << endl;
 				cout << "The girl vanishes. Turns out she was holding your precious video game. You feel nostalgia and sorrow. " << endl;
 				cout << "------------------------------------------------------------" << endl;
-				//karmaCounter++;
-				karmaCount.setKarmaCounter(karmaCounter++);
+				
 			}
 
 			else if (command == "Pass by")
@@ -103,8 +105,8 @@ void StoryStart::startStory()
 				cout << "------------------------------------------------------------" << endl;
 				cout << "She screams at you from a distance 'It is all your fault!' and disappears. You feel guilt" << endl;
 				cout << "------------------------------------------------------------" << endl;
-				//karmaCounter--;
-				karmaCount.setKarmaCounter(karmaCounter--);
+				
+				
 			}
 		}
 
@@ -195,4 +197,34 @@ void StoryStart::startStory()
 	}
 	//Close the story file after iteration
 	storyFile.close();
+}
+
+std::vector<std::string> StoryStart::GetDialogueText()
+{
+	return m_dialogueTxt;
+}
+
+std::vector<std::string> StoryStart::GetInputAction()
+{
+	return m_inputActions;
+}
+
+void StoryStart::SetCurrentActions(std::vector<std::string> actions)
+{
+	std::swap(m_currentActions, actions);
+}
+
+std::vector<std::string> StoryStart::GetCurrentActions()
+{
+	return m_currentActions;
+}
+
+int StoryStart::GetCurrentStepThrough()
+{
+	return currentGameStepThrough;
+}
+
+void StoryStart::SetCurrentSetThrough(int bleh)
+{
+	currentGameStepThrough = bleh;
 }
