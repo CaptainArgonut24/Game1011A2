@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+
 #include "PlayerUData.h"
 #include "SOUT.h"
 
@@ -204,7 +206,7 @@ std::vector<std::string> StoryStart::GetDialogueText()
 	return m_dialogueTxt;
 }
 
-std::vector<std::string> StoryStart::GetInputAction()
+vector<std::string> StoryStart::GetInputAction()
 {
 	return m_inputActions;
 }
