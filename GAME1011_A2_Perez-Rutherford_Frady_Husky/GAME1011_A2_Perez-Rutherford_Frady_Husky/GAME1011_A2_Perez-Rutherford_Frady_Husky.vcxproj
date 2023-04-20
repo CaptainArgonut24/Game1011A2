@@ -131,12 +131,14 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GAME1011_A2_Perez-Rutherford_Frady_Husky.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Rooms.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Characters.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Rooms.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,4 +15,7 @@ struct Player : Characters
 	int pDamage = 25;
 
 	void Attack() override;
+
+	void Serialize(Player& player, size_t filePosition, std::fstream& file);
+	void Deserialize(Player& player, size_t filePosition, std::fstream& file);
 };

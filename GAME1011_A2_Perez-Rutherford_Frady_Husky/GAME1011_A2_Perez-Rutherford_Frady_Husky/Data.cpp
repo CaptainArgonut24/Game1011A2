@@ -60,3 +60,8 @@ void Data::SaveEnemyData(Enemy& enemy)
 		file.close();
 	}
 }
+
+void Data::CommandParse(string& command)
+{
+
+}

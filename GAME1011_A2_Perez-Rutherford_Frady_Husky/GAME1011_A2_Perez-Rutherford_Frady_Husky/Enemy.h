@@ -15,4 +15,7 @@ struct Enemy : Characters
 	int eDamage = 10;
 
 	void Attack() override;
+
+	void Serialize(Enemy& enemy, size_t filePosition, std::fstream& file);
+	void Deserialize(Enemy& enemy, size_t filePosition, std::fstream& file);
 };
