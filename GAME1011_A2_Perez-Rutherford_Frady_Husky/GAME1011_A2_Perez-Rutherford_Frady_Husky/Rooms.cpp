@@ -2,14 +2,17 @@
 
 Rooms::Rooms(const std::string& room_name) : roomName(room_name) {}
 
-std::vector<std::string> Rooms::GetRooms(std::string& room)
+Rooms* Rooms::GetRooms(std::string& location)
 {
-	return rooms;
+	return rooms.at(location);
 }
 
-void Rooms::SetRooms()
+void Rooms::SetRooms(Rooms* winton_dungeon, Rooms* wizard_house, Rooms* carl_aquarium, Rooms* baller_stadium)
 {
-	rooms.push_back("Wizard's House");
-	rooms.push_back("Winton's Dungeon");
-	rooms.push_back("Carl's Aquarium");
+	rooms["Winton's Dungeon"] = winton_dungeon;
+	rooms["Wizard's House"] = wizard_house;
+	rooms["Carl's Aquarium"] = carl_aquarium;
+	rooms["Baller's Stadium"] = baller_stadium;
 }
+
+

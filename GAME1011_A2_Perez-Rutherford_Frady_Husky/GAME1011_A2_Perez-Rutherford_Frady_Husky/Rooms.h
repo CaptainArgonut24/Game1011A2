@@ -1,15 +1,15 @@
 #pragma once
+#include <map>
 #include <string>
-#include <vector>
 
 struct Rooms
 {
 	Rooms(const std::string& room_name);
 
-	std::vector<std::string> GetRooms(std::string& room);
-	void SetRooms();
+	Rooms* GetRooms(std::string& location);
+	void SetRooms(Rooms* winton_dungeon, Rooms* wizard_house, Rooms* carl_aquarium, Rooms* baller_stadium);
 
 	std::string roomName;
-	std::vector<std::string> rooms;
+	std::map<std::string, Rooms*> rooms;
 };
 
